@@ -10,7 +10,13 @@ export default function (ComposedComponent) {
       if(!this.props.authenticated){
       this.context.router.push('/')
       }
-      
+    }
+// gets called whenever a component isgoing to be handled a new set of props. or rerendered
+    componentWillUpdate(nextProps) {
+      console.log('   componentWillUpdate  called');
+      if(!nextProps.authenticated){
+      this.context.router.push('/')
+      }
     }
 
     render() {
